@@ -9,7 +9,7 @@ use Mini\Core\Router;
 // Table des routes minimaliste
 $routes = [
     ['GET', '/', [Mini\Controllers\HomeController::class, 'index']],
-    ['GET', '/users', [Mini\Controllers\HomeController::class, 'users']],
+    ['GET', '/products', [Mini\Controllers\ProductsController::class, 'index']],
 ];
 
 // Bootstrap du router
