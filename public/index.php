@@ -10,6 +10,9 @@ use Mini\Core\Router;
 $routes = [
     ['GET', '/', [Mini\Controllers\HomeController::class, 'index']],
     ['GET', '/products', [Mini\Controllers\ProductsController::class, 'index']],
+    ['GET', '/admin', [Mini\Controllers\AdminController::class, 'index']],
+    ['POST', '/admin', [Mini\Controllers\AdminController::class, 'index']],
+    ['POST', '/admin/add-product', [Mini\Controllers\AdminController::class, 'addProduct']],
 ];
 
 // Bootstrap du router

@@ -101,6 +101,22 @@ class Product
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function insert(array $data): void
+    {
+        $sql = "INSERT INTO products (name, price, quantity, image, id_category)
+                VALUES (:name, :price, :quantity, :image, :category)";
+
+        $pdo = Database::getPDO();
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            'name'     => $data['name'],
+            'price'    => $data['price'],
+            'quantity' => $data['quantity'],
+            'image'    => $data['image'],
+            'category' => $data['id_category'],
+        ]);
+    }
+
     // /**
     //  * Crée un nouvel utilisateur
     //  * @return bool
