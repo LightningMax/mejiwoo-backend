@@ -40,34 +40,9 @@
           </figure>
           <div>
             <h3><?= $product['name'] ?></h3>
-            <p><?= $product['price'] ?></p>
+            <p><?= $product['price'] ?> €</p>
           </div>
         </article>
       <?php endforeach ?>
-
-    <article class="best-seller-item">
-      <figure>
-        <img
-          src="assets/images/Venus_Halter_Dress.png"
-          alt="Venus Halter Dress"
-        />
-      </figure>
-      <div>
-        <h3>Venus Halter Dress</h3>
-        <p>Rp. 180.000</p>
-      </div>
-    </article>
-
-    <article class="best-seller-item">
-      <figure>
-        <img src="assets/images/Snap_Pure_Blouse.png" alt="Snap Pure Blouse" />
-      </figure>
-      <div>
-        <h3>Snap Pure Blouse</h3>
-        <p>Rp. 129.000</p>
-      </div>
-    </article>
   </div>
-
- <?php var_dump($best_seller) ?>
 </section>

@@ -17,7 +17,7 @@
       <nav class="header-nav">
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Product</a></li>
+          <li><a href="#">Products</a></li>
           <li><a href="#">Categories</a></li>
           <li><a href="#">SALE</a></li>
         </ul>
