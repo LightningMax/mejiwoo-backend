@@ -2,23 +2,21 @@
     
     <header>
         <h1>Our Products</h1>
-        
-        <nav>
-            <a href="">Top</a>
-            <a href="">Bottom</a>
-            <a href="">Dress</a>
-        </nav>
     </header>
 
     <div class="products-container-wrapper">
         <div class="products-container">
-            <article class="product-item">
-                <img src="assets/images/yellow_dress.png">
-                <div class="product-item-info">
-                    <p>Yellow dress</p>
-                    <span>21.99 €</span>
-                </div>
-            </article>
+            <?php foreach($products as $product): ?>
+                <article class="product-item">
+                <a href="/products/product-detail?id=<?=$product["id"]?>">
+                    <img src="<?=$product["image"]?>">
+                </a>    
+                    <div class="product-item-info">
+                        <p><?=$product["name"]?></p>
+                        <span><?=$product["price"]?> €</span>
+                    </div>
+                </article>
+            <?php endforeach ?>
         </div>
     </div>
     

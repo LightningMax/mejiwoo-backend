@@ -270,3 +270,30 @@ header {
 .product-item-info {
   text-align: center;
 }
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.product-detail .product-detail-wrapper {
+  display: flex;
+  gap: 16px;
+
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.product-detail .product-detail-wrapper div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-detail h2 {
+  margin-bottom: 20px;
+}

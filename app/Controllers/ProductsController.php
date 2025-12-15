@@ -14,4 +14,24 @@ final class ProductsController extends Controller
             'products' => Product::getAll(),
         ]);
     }
+
+    public function showProductDetail() {
+        $id = $_GET['id'] ?? null;
+
+        if ($id === null || !is_numeric($id)) {
+            header('Location: /products');
+            return;
+        }
+
+        $product = Product::findById($id);
+
+        if($product === false || $product === null) {
+            header('Location: /products');
+            return;
+        }
+   
+        $this->render('products/product-detail', [
+            'product' => $product,
+        ]);
+    }
 }

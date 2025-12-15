@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <title><?= isset($title) ? htmlspecialchars($title) : 'MEJIWOO' ?></title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <header>
@@ -33,7 +33,7 @@
                 <button type="submit">
                   <img
                     class="icon"
-                    src="assets/icons/search-icon.svg"
+                    src="/assets/icons/search-icon.svg"
                     alt=""
                     srcset=""
                   />
@@ -44,12 +44,12 @@
           <li>
             <img
               class="icon"
-              src="assets/icons/cart-icon.svg"
+              src="/assets/icons/cart-icon.svg"
               alt=""
               srcset=""
             />
           </li>
-          <li><img class="icon" src="assets/icons/user-icon.svg" alt="" /></li>
+          <li><img class="icon" src="/assets/icons/user-icon.svg" alt="" /></li>
         </ul>
       </nav>
 </header>
