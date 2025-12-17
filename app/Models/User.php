@@ -9,12 +9,18 @@ use PDO;
 class User
 {
     private $id;
-    private $nom;
+    private $firstname;
+    private $lastname;
     private $email;
+    private $password;
 
-    // =====================
-    // Getters / Setters
-    // =====================
+    public function __construct($firstname, $lastname, $email, $password)
+    {
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->email = $email;
+        $this->password = $password;
+    }
 
     public function getId()
     {
@@ -26,14 +32,14 @@ class User
         $this->id = $id;
     }
 
-    public function getnom()
+    public function getFirstname()
     {
-        return $this->nom;
+        return $this->firstname;
     }
 
-    public function setNom($nom)
+    public function setFirstname($firstname)
     {
-        $this->nom = $nom;
+        $this->firstname = $firstname;
     }
 
     public function getEmail()
@@ -46,10 +52,6 @@ class User
         $this->email = $email;
     }
 
-    // =====================
-    // Méthodes CRUD
-    // =====================
-
     /**
      * Récupère tous les utilisateurs
      * @return array
@@ -57,7 +59,7 @@ class User
     public static function getAll()
     {
         $pdo = Database::getPDO();
-        $stmt = $pdo->query("SELECT * FROM user ORDER BY id DESC");
+        $stmt = $pdo->query("SELECT * FROM users ORDER BY id DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -69,7 +71,7 @@ class User
     public static function findById($id)
     {
         $pdo = Database::getPDO();
-        $stmt = $pdo->prepare("SELECT * FROM user WHERE id = ?");
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -82,7 +84,7 @@ class User
     public static function findByEmail($email)
     {
         $pdo = Database::getPDO();
-        $stmt = $pdo->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -94,20 +96,25 @@ class User
     public function save()
     {
         $pdo = Database::getPDO();
-        $stmt = $pdo->prepare("INSERT INTO user (nom, email) VALUES (?, ?)");
-        return $stmt->execute([$this->nom, $this->email]);
+        $stmt = $pdo->prepare("INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)");
+        return $stmt->execute([
+            $this->firstname, 
+            $this->lastname, 
+            $this->email,
+            $this->password
+        ]);
     }
 
     /**
      * Met à jour les informations d’un utilisateur existant
      * @return bool
      */
-    public function update()
-    {
-        $pdo = Database::getPDO();
-        $stmt = $pdo->prepare("UPDATE user SET nom = ?, email = ? WHERE id = ?");
-        return $stmt->execute([$this->nom, $this->email, $this->id]);
-    }
+    // public function update()
+    // {
+    //     $pdo = Database::getPDO();
+    //     $stmt = $pdo->prepare("UPDATE user SET nom = ?, email = ? WHERE id = ?");
+    //     return $stmt->execute([$this->nom, $this->email, $this->id]);
+    // }
 
     /**
      * Supprime un utilisateur
@@ -116,7 +123,7 @@ class User
     public function delete()
     {
         $pdo = Database::getPDO();
-        $stmt = $pdo->prepare("DELETE FROM user WHERE id = ?");
+        $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
         return $stmt->execute([$this->id]);
     }
 }
