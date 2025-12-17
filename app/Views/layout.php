@@ -49,7 +49,7 @@
               srcset=""
             />
           </li>
-          <li><img class="icon" src="/assets/icons/user-icon.svg" alt="" /></li>
+          <li><a href="/login"><img class="icon" src="/assets/icons/user-icon.svg" alt="" /></a> </li>
         </ul>
       </nav>
 </header>
