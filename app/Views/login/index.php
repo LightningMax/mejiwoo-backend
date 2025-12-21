@@ -10,8 +10,8 @@
 
     <form action="/login" method="post" class="login-form">
         <div>
-            <input type="text" name="email" required placeholder="Email Address">
-            <input type="text" name="password" required placeholder="Password">
+            <input type="email" name="email" required placeholder="Email Address">
+            <input type="password" name="password" required placeholder="Password">
         </div>
     
         <button type="submit">Log in</button>
