@@ -22,6 +22,9 @@ $routes = [
     ['GET', '/products', [Mini\Controllers\ProductsController::class, 'index']],
     ['GET', '/products/product-detail', [Mini\Controllers\ProductsController::class, 'showProductDetail']],
     
+    ['GET', '/cart', [Mini\Controllers\CartController::class, 'index']],
+    ['POST', '/add-to-cart', [Mini\Controllers\CartController::class, 'addToCart']],
+    
     ['GET', '/admin', [Mini\Controllers\AdminController::class, 'index']],
     ['POST', '/admin', [Mini\Controllers\AdminController::class, 'index']],
     ['POST', '/admin/add-product', [Mini\Controllers\AdminController::class, 'addProduct']],

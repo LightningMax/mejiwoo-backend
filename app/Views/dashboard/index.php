@@ -1,2 +1,4 @@
-<h1>Hello <?= $_SESSION["user_firstname"] ?> </h1>
-<a href="/logout">logout</a>
+<section class="dashboard-section">
+    <h1>Hello <?= $_SESSION["user_firstname"] ?> </h1>
+    <a href="/logout">logout</a>
+</section>
