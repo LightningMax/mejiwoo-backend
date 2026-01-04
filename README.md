@@ -1,5 +1,11 @@
 # Utilisation
 
+## Installer les dependances:
+
+```bash
+composer install
+```
+
 - Changez le fichier config.ini avec les identifiants BDD
 
 ## Creation de la BDD
